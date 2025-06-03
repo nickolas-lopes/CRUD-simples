@@ -1,0 +1,18 @@
+.Buscar{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+
+}
+#pesquisar{
+    width: 500px;
+}
+.form{
+    width: 50%;
+    padding-left: 200px;
+}
+.interact-buttons{
+margin-left: 200px;
+margin-top: 20px;
+}
