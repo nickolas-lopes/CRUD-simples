@@ -48,6 +48,29 @@ function adicionar() {
   document.querySelector("#senha").value = '';
 }
 
+function atualizar() {
+  let dados = JSON.parse(localStorage.getItem("tds")) || [];
+  let id = document.querySelector("#id").value;
+  let login = document.querySelector("#login").value;
+  let senha = document.querySelector("#senha").value;
+
+  for (let i = 0; i < dados.length; i++) {
+    if (dados[i].id == id) {
+      dados[i].nome = login;
+      dados[i].senha = senha;
+      break;
+    }
+  }
+
+  localStorage.setItem("tds", JSON.stringify(dados));
+  tabela();
+
+  
+  document.querySelector("#id").value = '';
+  document.querySelector("#login").value = '';
+  document.querySelector("#senha").value = '';
+}
+
 function tabela() {
   let dados = JSON.parse(localStorage.getItem("tds")) || [];
   let tabela = document.querySelector(".table tbody");
@@ -64,4 +87,3 @@ function tabela() {
     tabela.appendChild(linha);
   }
 }
-
